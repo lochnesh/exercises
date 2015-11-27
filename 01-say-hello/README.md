@@ -1,3 +1,3 @@
-#say-hello
+#01-say-hello
 
-Write a program that takes a name as input and prints "Hello, $name, nice to meet you!"
+A program that takes a name as input and prints "Hello, $name, nice to meet you!"
