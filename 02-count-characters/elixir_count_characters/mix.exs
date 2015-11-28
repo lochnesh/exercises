@@ -1,17 +1,17 @@
-defmodule ElixirSayHello.Mixfile do
+defmodule ElixirCountCharacters.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :elixir_say_hello,
+    [app: :elixir_count_characters,
      version: "0.0.1",
      elixir: "~> 1.1",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     escript: [main_module: ElixirSayHello],
+     escript: [main_module: ElixirCountCharacters],
      deps: deps]
   end
 
-  def application do
+    def application do
     [applications: [:logger]]
   end
 
