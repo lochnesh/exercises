@@ -1,4 +1,4 @@
-package io.github.lochnesh
+package com.lochnesh.exercises.simplemath
 
 class Computations {
 

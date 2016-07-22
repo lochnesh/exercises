@@ -1,4 +1,4 @@
-package io.github.lochnesh
+package com.lochnesh.exercises.simplemath
 
 import org.scalatest.{Matchers, FlatSpec}
 
@@ -6,7 +6,7 @@ class ComputationsSpec extends FlatSpec with Matchers {
 
   def fixture = {
     new {
-      val computations = new Computations()
+      val computations = new Computations
     }
   }
 
