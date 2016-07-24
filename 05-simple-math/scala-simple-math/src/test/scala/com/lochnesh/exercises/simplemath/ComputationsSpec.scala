@@ -4,12 +4,13 @@ import org.scalatest.{Matchers, FlatSpec}
 
 class ComputationsSpec extends FlatSpec with Matchers {
 
-  def fixture = {
+  private def fixture = {
     new {
       val computations = new Computations
     }
   }
 
+  // scalastyle:off magic.number
   "Addition" should "return numbers added together" in {
     fixture.computations.add(1, 2) should be (3)
     fixture.computations.add(2, 3) should be (5)
@@ -33,5 +34,6 @@ class ComputationsSpec extends FlatSpec with Matchers {
     fixture.computations.divide(12, 4) should be (3)
     fixture.computations.divide(1.5, .2) should be (7.5)
   }
+  // scalastyle:on magic.number
 
 }

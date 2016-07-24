@@ -14,4 +14,4 @@ pushd 03-printing-quotes/elixir_printing_quotes && mix test && mix credo --stric
 pushd 04-mad-lib/elixir_mad_lib && mix test && mix credo --strict && popd
 
 #05
-pushd 05-simple-math/scala-simple-math && sbt test && popd
+pushd 05-simple-math/scala-simple-math && sbt scalastyle test:scalastyle test && popd

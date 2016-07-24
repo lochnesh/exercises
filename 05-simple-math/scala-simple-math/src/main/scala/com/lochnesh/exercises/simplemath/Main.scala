@@ -7,7 +7,7 @@ object Main extends App {
 }
 
 class SimpleMath(reader: (String) ⇒ String = readLine(_), writer: (String) ⇒ Unit = println(_)) {
-  def run() = {
+  def run(): Unit = {
     val firstNumber = BigDecimal(reader("What is the first number? "))
     val secondNumber = BigDecimal(reader("What is the second number? "))
 
