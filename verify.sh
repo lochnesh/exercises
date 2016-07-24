@@ -5,7 +5,7 @@ set -e
 pushd 01-say-hello/elixir_say_hello && mix test && mix credo --strict && popd
 
 #02
-pushd 02-count-characters/elixir_count_characters && mix test && popd
+pushd 02-count-characters/elixir_count_characters && mix test && mix credo --strict  && popd
 
 #03
 pushd 03-printing-quotes/elixir_printing_quotes && mix test && popd

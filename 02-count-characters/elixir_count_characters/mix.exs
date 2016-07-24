@@ -4,7 +4,7 @@ defmodule ElixirCountCharacters.Mixfile do
   def project do
     [app: :elixir_count_characters,
      version: "0.0.1",
-     elixir: "~> 1.1",
+     elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      escript: [main_module: ElixirCountCharacters],
@@ -16,6 +16,6 @@ defmodule ElixirCountCharacters.Mixfile do
   end
 
   defp deps do
-    [{:credo, "~> 0.1.9", only: [:dev, :test]}]
+    [{:credo, "~> 0.4", only: [:dev, :test]}]
   end
 end
