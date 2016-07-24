@@ -1,7 +1,12 @@
 defmodule Author do
 
+  @moduledoc """
+  Requests an author from IO
+  """
+
   def get() do
-    IO.gets("Who is the author? ")
+    "Who is the author? "
+    |> IO.gets
     |> String.strip
   end
 end

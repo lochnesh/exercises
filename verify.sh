@@ -8,7 +8,7 @@ pushd 01-say-hello/elixir_say_hello && mix test && mix credo --strict && popd
 pushd 02-count-characters/elixir_count_characters && mix test && mix credo --strict  && popd
 
 #03
-pushd 03-printing-quotes/elixir_printing_quotes && mix test && popd
+pushd 03-printing-quotes/elixir_printing_quotes && mix test && mix credo --strict && popd
 
 #04
 pushd 04-mad-lib/elixir_mad_lib && mix test && popd

@@ -1,7 +1,12 @@
 defmodule Quote do
 
+  @moduledoc """
+  Gets a quote from IO
+  """
+
   def get() do
-    IO.gets("What is the quote? ")
+    "What is the quote? "
+    |> IO.gets
     |> String.strip
   end
 end

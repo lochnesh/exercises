@@ -1,5 +1,9 @@
 defmodule QuoteFake do
 
+  @moduledoc """
+  Fakes getting a quote from IO
+  """
+
   def get() do
     the_quote = "These aren't the droids you're looking for."
     IO.gets "What is the quote? "

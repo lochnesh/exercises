@@ -1,4 +1,9 @@
 defmodule ElixirPrintingQuotes do
+
+  @moduledoc """
+  An app that prints a quote and the author
+  """
+
   Application.load(:elixir_printing_quotes)
   @author Application.get_env(:elixir_printing_quotes, :author)
   @quote Application.get_env(:elixir_printing_quotes, :quote)
