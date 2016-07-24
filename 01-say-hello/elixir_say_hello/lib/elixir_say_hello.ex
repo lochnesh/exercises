@@ -1,4 +1,9 @@
 defmodule ElixirSayHello do
+
+  @moduledoc """
+  Main class for Elixir say hello app
+  """
+
   def main(_args) do
     prompt_for_name
     |> create_greeting

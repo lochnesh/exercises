@@ -2,7 +2,7 @@ set -o pipefail
 set -e
 
 #01
-pushd 01-say-hello/elixir_say_hello && mix test && popd
+pushd 01-say-hello/elixir_say_hello && mix test && mix credo --strict && popd
 
 #02
 pushd 02-count-characters/elixir_count_characters && mix test && popd
