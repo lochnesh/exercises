@@ -11,7 +11,7 @@ pushd 02-count-characters/elixir_count_characters && mix test && mix credo --str
 pushd 03-printing-quotes/elixir_printing_quotes && mix test && mix credo --strict && popd
 
 #04
-pushd 04-mad-lib/elixir_mad_lib && mix test && popd
+pushd 04-mad-lib/elixir_mad_lib && mix test && mix credo --strict && popd
 
 #05
 pushd 05-simple-math/scala-simple-math && sbt test && popd
