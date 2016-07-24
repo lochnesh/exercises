@@ -15,5 +15,3 @@ pushd 04-mad-lib/elixir_mad_lib && mix test && popd
 
 #05
 pushd 05-simple-math/scala-simple-math && sbt test && popd
-
-
