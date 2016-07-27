@@ -3,7 +3,7 @@ set -e
 
 verify_elixir()
 {
-  mix test && mix credo --strict
+  mix deps.get && mix test && mix credo --strict
 }
 
 verify_scala()
@@ -25,3 +25,6 @@ pushd 04-mad-lib/elixir_mad_lib && verify_elixir && popd
 
 #05
 pushd 05-simple-math/scala-simple-math && verify_scala && popd
+
+#06
+pushd 06-retirement-calculator/elixir_retirement_calculator && verify_elixir && popd
