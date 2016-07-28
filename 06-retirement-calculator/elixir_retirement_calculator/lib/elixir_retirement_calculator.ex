@@ -4,39 +4,38 @@ defmodule ElixirRetirementCalculator do
   A program that calculates how long until the user retires
   """
 
-  def main(_args) do
-    input = fn(x) -> x |> IO.gets() end
-    retirement_runner(input)
-  end
+  def main(_), do: run(&IO.gets/1, &get_current_year/0)
 
-  def retirement_runner(input) do
+  def run(input_func, year_func) do
     age = "What is your current age? "
-      |> input.()
-      |> String.trim
-      |> String.to_integer
+      |> get_input(input_func)
     retirement_age = "At what age would you like to retire? "
-      |> input.()
-      |> String.trim
-      |> String.to_integer
-    year = get_current_year()
+      |> get_input(input_func)
+    year = year_func.()
     retirement_year = time_to_retire(age, retirement_age, year)
     years_to_retirement = years_to_retirement(age, retirement_age)
     IO.puts("You have #{years_to_retirement} years left until you can retire.")
     IO.puts("It's #{year}, so you can retire in #{retirement_year}.")
   end
 
-  def time_to_retire(age, retirement_age, current_year) do
-    years_to_retire = retirement_age - age
-    current_year + years_to_retire
+  defp time_to_retire(age, retirement_age, current_year) do
+    current_year + years_to_retirement(age, retirement_age)
   end
 
-  def years_to_retirement(age, retirement_age) do
+  defp years_to_retirement(age, retirement_age) do
     retirement_age - age
   end
 
-  def get_current_year() do
+  defp get_current_year() do
     {{year, _, _},_} = :calendar.local_time()
     year
+  end
+
+  defp get_input(prompt, input_func) do
+    prompt
+    |> input_func.()
+    |> String.trim
+    |> String.to_integer
   end
 
 end
