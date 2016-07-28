@@ -5,7 +5,7 @@ defmodule ElixirRetirementCalculatorTest do
 
   test "calculator prints time to retirement" do
     input = fn(x) -> input_fake(x) end
-    year = ElixirRetirementCalculator.year()
+    year = ElixirRetirementCalculator.get_current_year()
     years_to_retirement = ElixirRetirementCalculator.years_to_retirement(30, 65)
     assert capture_io(fn ->
         ElixirRetirementCalculator.retirement_runner(input)

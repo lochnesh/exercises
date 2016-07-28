@@ -5,18 +5,20 @@ defmodule ElixirRetirementCalculator do
   """
 
   def main(_args) do
-    input = fn(x) -> IO.gets(x) end
+    input = fn(x) -> x |> IO.gets() end
     retirement_runner(input)
   end
 
   def retirement_runner(input) do
-    age = input.("What is your current age? ")
+    age = "What is your current age? "
+      |> input.()
       |> String.trim
       |> String.to_integer
-    retirement_age = input.("At what age would you like to retire? ")
+    retirement_age = "At what age would you like to retire? "
+      |> input.()
       |> String.trim
       |> String.to_integer
-    year = year()
+    year = get_current_year()
     retirement_year = time_to_retire(age, retirement_age, year)
     years_to_retirement = years_to_retirement(age, retirement_age)
     IO.puts("You have #{years_to_retirement} years left until you can retire.")
@@ -32,7 +34,7 @@ defmodule ElixirRetirementCalculator do
     retirement_age - age
   end
 
-  def year() do
+  def get_current_year() do
     {{year, _, _},_} = :calendar.local_time()
     year
   end
