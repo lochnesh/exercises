@@ -28,3 +28,6 @@ pushd 05-simple-math/scala-simple-math && verify_scala && popd
 
 #06
 pushd 06-retirement-calculator/elixir_retirement_calculator && verify_elixir && popd
+
+#07
+pushd 07-area-of-room/elixir_area_of_room && verify_elixir && popd
