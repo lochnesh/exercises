@@ -7,7 +7,10 @@ defmodule ElixirRetirementCalculatorTest do
     year = fn() -> 2016 end
     assert capture_io(fn ->
       ElixirRetirementCalculator.run(&(input_fake(&1)), year)
-    end) == "You have 35 years left until you can retire.\nIt's #{year.()}, so you can retire in 2051.\n"
+    end) == """
+    You have 35 years left until you can retire.
+    It's #{year.()}, so you can retire in 2051.
+    """
 
   end
 

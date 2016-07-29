@@ -5,17 +5,17 @@ defmodule ElixirAreaOfRoomTest do
 
   @length 15.0
   @width 20.0
-  @area_in_feet 300.0
-  @area_in_meters 27.871
 
   test "run produces expected results" do
-
-
     assert capture_io(fn ->
       ElixirAreaOfRoom.run(&read/1)
     end
-    ) == "You entered the dimensions of #{@length} feet by #{@width} feet.\nThe area is\n#{@area_in_feet} square feet\n#{@area_in_meters} square meters\n"
-
+    ) == """
+    You entered the dimensions of #{@length} feet by #{@width} feet.
+    The area is
+    300.0 square feet
+    27.871 square meters
+    """
   end
 
   def read(prompt) do
