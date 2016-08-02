@@ -32,4 +32,5 @@ pushd 06-retirement-calculator/elixir_retirement_calculator && verify_elixir && 
 #07
 pushd 07-area-of-room/elixir_area_of_room && verify_elixir && popd
 
+bundle install
 bundle exec cucumber
