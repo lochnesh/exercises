@@ -5,7 +5,7 @@ Feature: 03 Printing quotes
      And I type "Darth Vader"
      Then the output should contain "What is the quote? "
      And the output should contain "Who is the author? "
-     And the output should contain: 
+     And the output should contain:
        """
-       Darth Vader says, "Luke, I am your father.
+       Darth Vader says, "Luke, I am your father."
        """

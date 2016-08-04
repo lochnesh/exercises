@@ -8,7 +8,7 @@ verify_elixir()
 
 verify_scala()
 {
-  sbt scalastyle test:scalastyle test
+  sbt scalastyle test:scalastyle test assembly
 }
 
 #01
