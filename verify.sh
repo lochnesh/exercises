@@ -5,7 +5,7 @@ set -e
 
 verify_elixir()
 {
-  mix deps.get && mix test && mix credo --strict && mix escript.build
+  mix local.hex --force && mix deps.get && mix test && mix credo --strict && mix escript.build
 }
 
 verify_scala()
