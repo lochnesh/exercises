@@ -1,18 +1,21 @@
-PIECES_PER_PIZZA = 8
-
-
 class PizzaParty():
 
     def __init__(self):
         self.slices = 0
         self.people = 0
+        self.sizes = {
+            'large': 8,
+            'medium': 6,
+            'small': 4
+        }
 
     def invite(self, people):
         self.people = self.people + people
         return self
 
-    def order(self, pizzas):
-        self.slices = self.slices + (pizzas * PIECES_PER_PIZZA)
+    def order(self, pizzas, size='large'):
+        pieces_per_pizza = self.sizes[size.lower()]
+        self.slices = self.slices + (pizzas * pieces_per_pizza)
         return self
 
     def pieces_per_person(self):

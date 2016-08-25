@@ -41,3 +41,18 @@ class TestPizzaCalculator(unittest.TestCase):
         party.invite(9)
         self.assertEqual(0, party.leftovers())
         self.assertEqual(1, party.pieces_per_person())
+
+    def test_order_small_pizza(self):
+        party = PizzaParty().invite(3).order(1, 'small')
+        self.assertEqual(1, party.leftovers())
+        self.assertEqual(1, party.pieces_per_person())
+
+    def test_order_medium_pizza(self):
+        party = PizzaParty().invite(5).order(2, 'medium')
+        self.assertEqual(2, party.leftovers())
+        self.assertEqual(2, party.pieces_per_person())
+
+    def test_order_large_pizza(self):
+        party = PizzaParty().invite(30).order(4, 'large')
+        self.assertEqual(2, party.leftovers())
+        self.assertEqual(1, party.pieces_per_person())
