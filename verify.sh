@@ -8,6 +8,11 @@ verify_elixir()
   mix local.hex --force && mix deps.get && mix test && mix credo --strict && mix escript.build
 }
 
+verify_python()
+{
+  python -m unittest discover -s tests
+}
+
 verify_scala()
 {
   sbt scalastyle test:scalastyle test assembly
@@ -33,6 +38,9 @@ pushd 06-retirement-calculator/elixir_retirement_calculator && verify_elixir && 
 
 #07
 pushd 07-area-of-room/elixir_area_of_room && verify_elixir && popd
+
+#08
+pushd 08-pizza-party/python-pizza-party && verify_python && popd
 
 bundle install
 bundle exec cucumber
