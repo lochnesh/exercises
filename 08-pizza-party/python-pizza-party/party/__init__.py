@@ -1,9 +1,21 @@
+PIECES_PER_PIZZA = 8
+
+
 class PizzaParty():
 
-    def __init__(self, pizzas):
-        self.pizzas = pizzas
+    def __init__(self):
+        None
 
-    def guests(self, people):
+    def invite(self, people):
         self.people = people
-        self.pieces_per_person = self.pizzas / people
-        self.leftovers = self.pizzas % people
+        return self
+
+    def order(self, pizzas):
+        self.slices = pizzas * PIECES_PER_PIZZA
+        return self
+
+    def pieces_per_person(self):
+        return self.slices / self.people
+
+    def leftovers(self):
+        return self.slices % self.people
