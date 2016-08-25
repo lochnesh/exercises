@@ -3,7 +3,7 @@ import unittest
 from party import PizzaParty
 
 
-class TestPizzaCalculator(unittest.TestCase):
+class TestPizzaParty(unittest.TestCase):
 
     def test_party_invitations(self):
         party = PizzaParty().invite(8)
