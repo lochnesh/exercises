@@ -4,15 +4,16 @@ defmodule ElixirMadLibTest do
   doctest ElixirMadLib
 
   test "prints mad lib" do
+    input = fn(prompt) -> 
+      case prompt do
+        "Enter a noun : " -> "dog"
+        "Enter a verb : " -> "walk"
+        "Enter an adjective : " -> "blue"
+        "Enter an adverb : " -> "quickly"
+      end
+    end
     assert capture_io(fn ->
-      mad_lib = [
-        noun: fn -> "dog" end,
-        verb: fn -> "walk" end,
-        adjective: fn -> "blue" end,
-        adverb: fn -> "quickly" end
-        ]
-
-      ElixirMadLib.print(mad_lib)
+      ElixirMadLib.print(input)
     end) == "Do you walk your blue dog quickly? That's hillarious!\n"
   end
 end
