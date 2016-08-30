@@ -13,7 +13,8 @@ class PizzaParty():
         self.people = self.people + people
         return self
 
-    def order(self, pizzas, size='large'):
+    def order(self, pizzas, size=None):
+        size = size.lower() if size else 'large'
         pieces_per_pizza = self.sizes[size.lower()]
         self.slices = self.slices + (pizzas * pieces_per_pizza)
         return self

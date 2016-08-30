@@ -1,5 +1,11 @@
 #python-pizza-party
 
+##to run
+
+```
+./main.py
+```
+
 ##tests
 
 ```
