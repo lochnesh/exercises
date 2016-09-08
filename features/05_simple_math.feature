@@ -7,8 +7,8 @@ Feature: 05 Simple math
      And the output should contain "What is the second number? "
      And the output should contain:
          """
-         10 + 5 = 15
-         10 - 5 = 5
-         10 * 5 = 50
-         10 / 5 = 2
+         10 + 5 = 15.0
+         10 - 5 = 5.0
+         10 * 5 = 50.0
+         10 / 5 = 2.0
          """

@@ -1,6 +1,7 @@
 package com.lochnesh.exercises.simplemath
 
 import org.scalatest.{Matchers, FlatSpec}
+import com.lochnesh.exercises.simplemath.ComputationImplicits._
 
 class SimpleMathSpec extends FlatSpec with Matchers {
 
@@ -23,12 +24,10 @@ class SimpleMathSpec extends FlatSpec with Matchers {
 
     new SimpleMath(reader, writer).run()
 
-    val computations = new Computations
-
     outputs should contain inOrderOnly(
-      s"$firstNumber + $secondNumber = ${computations.add(firstNumber, secondNumber)}",
-      s"$firstNumber - $secondNumber = ${computations.subtract(firstNumber, secondNumber)}",
-      s"$firstNumber * $secondNumber = ${computations.multiply(firstNumber, secondNumber)}",
-      s"$firstNumber / $secondNumber = ${computations.divide(firstNumber, secondNumber)}")
+      s"$firstNumber + $secondNumber = ${firstNumber plus secondNumber}",
+      s"$firstNumber - $secondNumber = ${firstNumber minus secondNumber}",
+      s"$firstNumber * $secondNumber = ${firstNumber times secondNumber}",
+      s"$firstNumber / $secondNumber = ${firstNumber divide secondNumber}")
   }
 }

@@ -1,5 +1,6 @@
 package com.lochnesh.exercises.simplemath
 
+import com.lochnesh.exercises.simplemath.ComputationImplicits._
 import scala.io.StdIn._
 
 object Main extends App {
@@ -11,10 +12,9 @@ class SimpleMath(reader: (String) ⇒ String = readLine(_), writer: (String) ⇒
     val firstNumber = BigDecimal(reader("What is the first number? "))
     val secondNumber = BigDecimal(reader("What is the second number? "))
 
-    val computations = new Computations
-    writer(s"$firstNumber + $secondNumber = ${computations.add(firstNumber, secondNumber)}")
-    writer(s"$firstNumber - $secondNumber = ${computations.subtract(firstNumber, secondNumber)}")
-    writer(s"$firstNumber * $secondNumber = ${computations.multiply(firstNumber, secondNumber)}")
-    writer(s"$firstNumber / $secondNumber = ${computations.divide(firstNumber, secondNumber)}")
+    writer(s"$firstNumber + $secondNumber = ${firstNumber plus secondNumber}")
+    writer(s"$firstNumber - $secondNumber = ${firstNumber minus secondNumber}")
+    writer(s"$firstNumber * $secondNumber = ${firstNumber times secondNumber}")
+    writer(s"$firstNumber / $secondNumber = ${firstNumber divide secondNumber}")
   }
 }
