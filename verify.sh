@@ -15,7 +15,7 @@ verify_python()
 
 verify_scala()
 {
-  sbt scalastyle test:scalastyle test assembly
+  sbt scalastyle test:scalastyle assembly
 }
 
 #01
