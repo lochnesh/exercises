@@ -42,5 +42,8 @@ pushd 07-area-of-room/elixir_area_of_room && verify_elixir && popd
 #08
 pushd 08-pizza-party/python-pizza-party && verify_python && popd
 
+#09
+pushd 09-paint-calculator/scala-paint-calculator && verify_scala && popd
+
 bundle install
 bundle exec cucumber
