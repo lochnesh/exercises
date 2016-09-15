@@ -13,7 +13,7 @@ object PaintCalculator {
     val width = input("What is the width of the ceiling? ").toDouble
 
     val gallons = Calculator.gallons(length, width)
-    output(s"You will need $gallons gallons of paint to cover ${length * width} square feet.")
+    output(s"You will need $gallons gallon${if (gallons > 1) "s" else ""} of paint to cover ${length * width} square feet.")
   }
 }
 
