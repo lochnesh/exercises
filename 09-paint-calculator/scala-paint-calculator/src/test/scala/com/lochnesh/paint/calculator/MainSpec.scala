@@ -12,7 +12,14 @@ class MainSpec extends FlatSpec with Matchers {
       }
     }
 
-    PaintCalculator.run(inputs)
+    var data = Seq[String]()
+    val output: (String) ⇒ Unit = (t: String) ⇒ {
+      data = data :+ t
+    }
+
+    PaintCalculator.run(inputs, output)
+
+    data.head should be ("You will need 1 gallons of paint to cover 120.0 square feet.")
   }
 
 }
