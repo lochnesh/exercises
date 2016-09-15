@@ -1,10 +1,8 @@
 package com.lochnesh.paint.calculator
 
 object Main extends App {
-
   val input = (prompt: String) ⇒ scala.io.StdIn.readLine(prompt)
   PaintCalculator.run(input, println)
-
 }
 
 object PaintCalculator {

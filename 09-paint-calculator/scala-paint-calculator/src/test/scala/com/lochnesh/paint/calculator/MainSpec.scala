@@ -7,7 +7,6 @@ import scala.concurrent.Promise
 class MainSpec extends AsyncFlatSpec with Matchers {
 
   it should "prompt user for length and width and print number of gallons" in {
-
     val (result, func) = output()
 
     PaintCalculator.run(inputs("12", "10"), func)
@@ -16,7 +15,6 @@ class MainSpec extends AsyncFlatSpec with Matchers {
   }
 
   it should "pluralize response" in {
-
     val (result, func) = output()
 
     PaintCalculator.run(inputs("20", "30"), func)
@@ -40,5 +38,4 @@ class MainSpec extends AsyncFlatSpec with Matchers {
     }
     (data, output)
   }
-
 }

@@ -11,5 +11,4 @@ class CalculatorSpec extends FlatSpec with Matchers {
     Calculator.gallons(20, 18) should be (2)
   }
   // scalastyle:on magic.number
-
 }
