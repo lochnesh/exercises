@@ -5,7 +5,7 @@ import java.io.{ByteArrayInputStream, ByteArrayOutputStream}
 import com.lochnesh.exercises.simplemath.ComputationImplicits._
 import org.scalatest.{FlatSpec, Matchers}
 
-class SimpleMathSpec extends FlatSpec with Matchers {
+class MainSpec extends FlatSpec with Matchers {
 
   def capture(inputs: Any*)(func: () ⇒ Unit): Seq[String] = {
     val outputStream = new ByteArrayOutputStream()
@@ -20,7 +20,7 @@ class SimpleMathSpec extends FlatSpec with Matchers {
     val firstNumber = 10
     val secondNumber = 5
 
-    capture(firstNumber, secondNumber){new SimpleMath().run} should contain inOrderOnly(
+    capture(firstNumber, secondNumber){() ⇒ Main.main(Array())} should contain inOrderOnly(
       s"What is the first number? What is the second number? $firstNumber + $secondNumber = ${firstNumber plus secondNumber}",
       s"$firstNumber - $secondNumber = ${firstNumber minus secondNumber}",
       s"$firstNumber * $secondNumber = ${firstNumber times secondNumber}",
