@@ -7,14 +7,14 @@ object Main extends App {
   new SimpleMath().run()
 }
 
-class SimpleMath(reader: (String) ⇒ String = readLine(_), writer: (String) ⇒ Unit = println(_)) {
+class SimpleMath() {
   def run(): Unit = {
-    val firstNumber = BigDecimal(reader("What is the first number? "))
-    val secondNumber = BigDecimal(reader("What is the second number? "))
+    val firstNumber = BigDecimal(readLine("What is the first number? "))
+    val secondNumber = BigDecimal(readLine("What is the second number? "))
 
-    writer(s"$firstNumber + $secondNumber = ${firstNumber plus secondNumber}")
-    writer(s"$firstNumber - $secondNumber = ${firstNumber minus secondNumber}")
-    writer(s"$firstNumber * $secondNumber = ${firstNumber times secondNumber}")
-    writer(s"$firstNumber / $secondNumber = ${firstNumber divide secondNumber}")
+    println(s"$firstNumber + $secondNumber = ${firstNumber plus secondNumber}")
+    println(s"$firstNumber - $secondNumber = ${firstNumber minus secondNumber}")
+    println(s"$firstNumber * $secondNumber = ${firstNumber times secondNumber}")
+    println(s"$firstNumber / $secondNumber = ${firstNumber divide secondNumber}")
   }
 }
