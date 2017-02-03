@@ -4,9 +4,10 @@ defmodule Author do
   Requests an author from IO
   """
 
-  def get() do
+  @spec get :: String.t()
+  def get do
     "Who is the author? "
-    |> IO.gets
-    |> String.strip
+    |> IO.gets()
+    |> String.strip()
   end
 end
