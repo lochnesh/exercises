@@ -4,18 +4,19 @@ defmodule ElixirCountCharacters do
   Program that counts characters in an input string
   """
 
+  @spec main(list(String.t())) :: :ok
   def main(_args) do
-    get_input
-    |> create_output
-    |> IO.puts
+    get_input()
+    |> create_output()
+    |> IO.puts()
   end
 
-  defp get_input() do
+  defp get_input do
     input = "What is the input string? "
-    |> IO.gets
-    |> String.strip
+    |> IO.gets()
+    |> String.strip()
     case input do
-      "" -> get_input
+      "" -> get_input()
       not_empty -> not_empty
     end
   end
