@@ -8,7 +8,7 @@ defmodule ElixirSayHello.Mixfile do
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      escript: [main_module: ElixirSayHello],
-     deps: deps]
+     deps: deps()]
   end
 
   def application do
