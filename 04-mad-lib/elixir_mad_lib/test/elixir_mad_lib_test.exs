@@ -4,7 +4,7 @@ defmodule ElixirMadLibTest do
   doctest ElixirMadLib
 
   test "prints mad lib" do
-    input = fn(prompt) -> 
+    input = fn(prompt) ->
       case prompt do
         "Enter a noun : " -> "dog"
         "Enter a verb : " -> "walk"
