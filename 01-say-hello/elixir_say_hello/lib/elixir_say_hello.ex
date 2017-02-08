@@ -4,7 +4,7 @@ defmodule ElixirSayHello do
   Main class for Elixir say hello app
   """
 
-  @spec main(list(String.t())) :: :ok
+  @spec main(list(String.t)) :: :ok
   def main(_args) do
     prompt_for_name()
     |> create_greeting()

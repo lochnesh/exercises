@@ -4,7 +4,7 @@ defmodule Quote do
   Gets a quote from IO
   """
 
-  @spec get :: String.t()
+  @spec get :: String.t
   def get do
     "What is the quote? "
     |> IO.gets()

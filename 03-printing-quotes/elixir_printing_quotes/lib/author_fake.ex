@@ -4,7 +4,7 @@ defmodule AuthorFake do
   Fake implementation of author IO
   """
 
-  @spec get :: String.t()
+  @spec get :: String.t
   def get do
     author = "Obi-Wan Kenobi"
     IO.gets "Who is the author? "

@@ -8,7 +8,7 @@ defmodule ElixirPrintingQuotes do
   @author Application.get_env(:elixir_printing_quotes, :author)
   @quote Application.get_env(:elixir_printing_quotes, :quote)
 
-  @spec main(list(String.t())) :: :ok
+  @spec main(list(String.t)) :: :ok
   def main(_args) do
     the_quote = @quote.get()
     author = @author.get()
