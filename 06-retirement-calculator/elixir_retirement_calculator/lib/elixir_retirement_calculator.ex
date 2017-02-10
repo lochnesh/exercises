@@ -4,8 +4,10 @@ defmodule ElixirRetirementCalculator do
   A program that calculates how long until the user retires
   """
 
+  @spec main(list(String.t)) :: :ok
   def main(_), do: run(&IO.gets/1, &get_current_year/0)
 
+  @spec run((String.t -> String.t), (() -> String.t)) :: :ok
   def run(input_func, year_func) do
     age = "What is your current age? "
       |> get_input(input_func)
@@ -26,7 +28,7 @@ defmodule ElixirRetirementCalculator do
     retirement_age - age
   end
 
-  defp get_current_year() do
+  defp get_current_year do
     {{year, _, _},_} = :calendar.local_time()
     year
   end
