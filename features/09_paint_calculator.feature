@@ -1,6 +1,6 @@
 Feature: 09 Paint Calculator
  Scenario: Scala
-     When I run `java -jar ../../09-paint-calculator/scala-paint-calculator/target/scala-2.11/paint-calculator-assembly-1.0.0.jar` interactively
+     When I run `java -jar ../../09-paint-calculator/scala-paint-calculator/target/scala-2.12/paint-calculator-assembly-1.1.0.jar` interactively
      And I type "20"
      And I type "30"
      Then the output should contain "What is the length of the ceiling? "
