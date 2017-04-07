@@ -29,7 +29,7 @@ defmodule ElixirRetirementCalculator do
   end
 
   defp get_current_year do
-    {{year, _, _},_} = :calendar.local_time()
+    {{year, _, _}, _} = :calendar.local_time()
     year
   end
 
