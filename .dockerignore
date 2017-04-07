@@ -1,0 +1,8 @@
+tmp
+.git
+*/*/deps*
+*/*/_build*
+*/*/elixir_*
+*/*/target*
+*/*/*/project*
+*/*/*/target*
