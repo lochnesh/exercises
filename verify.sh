@@ -45,5 +45,8 @@ pushd 08-pizza-party/python-pizza-party && verify_python && popd
 #09
 pushd 09-paint-calculator/scala-paint-calculator && verify_scala && popd
 
+#10
+pushd 10-self-checkout/python-self-checkout && verify_python && popd
+
 bundle install
 bundle exec cucumber
