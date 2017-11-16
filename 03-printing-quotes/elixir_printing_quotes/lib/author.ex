@@ -8,6 +8,6 @@ defmodule Author do
   def get do
     "Who is the author? "
     |> IO.gets()
-    |> String.strip()
+    |> String.trim()
   end
 end

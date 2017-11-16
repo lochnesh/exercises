@@ -8,6 +8,6 @@ defmodule Quote do
   def get do
     "What is the quote? "
     |> IO.gets()
-    |> String.strip()
+    |> String.trim()
   end
 end

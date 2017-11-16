@@ -14,7 +14,7 @@ defmodule ElixirCountCharacters do
   defp get_input do
     input = "What is the input string? "
     |> IO.gets()
-    |> String.strip()
+    |> String.trim()
     case input do
       "" -> get_input()
       not_empty -> not_empty

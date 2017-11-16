@@ -24,7 +24,7 @@ defmodule ElixirMadLib do
   defp read(prompt, input_func) do
     prompt
     |> input_func.()
-    |> String.strip()
+    |> String.trim()
   end
 
 end

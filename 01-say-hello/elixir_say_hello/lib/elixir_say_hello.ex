@@ -16,7 +16,7 @@ defmodule ElixirSayHello do
   end
 
   defp create_greeting(name) do
-    "Hello, #{String.strip(name)}, nice to meet you!"
+    "Hello, #{String.trim(name)}, nice to meet you!"
   end
 
   defp print_greeting(greeting) do
