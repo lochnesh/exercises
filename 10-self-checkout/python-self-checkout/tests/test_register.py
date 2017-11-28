@@ -23,4 +23,8 @@ class TestRegister(unittest.TestCase):
 
     def test_tax(self):
         self.add_items()
-        self.assertEqual(2.22, self.register.tax())
+        self.assertEqual(.12, self.register.tax())
+
+    def test_total(self):
+        self.add_items()
+        self.assertEqual(2.22, self.register.total())
