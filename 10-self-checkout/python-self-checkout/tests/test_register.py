@@ -6,7 +6,10 @@ from checkout import Register
 class TestRegister(unittest.TestCase):
 
     def setUp(self):
-        self.register = Register()
+        self.sub1 = MySubscriber()
+        self.sub2 = MySubscriber()
+        self.register = Register(subscribers=[self.sub1,
+                                              self.sub2])
 
     def add_items(self):
         self.register.add_item("orange", .50, 3)
@@ -28,3 +31,23 @@ class TestRegister(unittest.TestCase):
     def test_total(self):
         self.add_items()
         self.assertEqual(2.22, self.register.total())
+
+    def test_register_keeps_list_of_subscribers(self):
+        self.assertIn(self.sub1, self.register.subscribers)
+        self.assertIn(self.sub2, self.register.subscribers)
+
+    def test_register_notifies_subscribers(self):
+        events = ['data', 'mo data']
+        for e in events:
+            self.register.notify(e)
+        self.assertEqual(self.sub1.events, events)
+        self.assertEqual(self.sub2.events, events)
+
+
+class MySubscriber():
+
+    def __init__(self):
+        self.events = []
+
+    def receive(self, event):
+        self.events.append(event)

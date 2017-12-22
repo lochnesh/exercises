@@ -1,8 +1,9 @@
 class Register:
 
-    def __init__(self):
+    def __init__(self, subscribers):
         self.items = []
         self.__tax_rate = .055
+        self.subscribers = subscribers
 
     def add_item(self, item, price, quantity):
         self.items.append((item, price, quantity))
@@ -21,3 +22,7 @@ class Register:
 
     def total(self):
         return self.subtotal() + self.tax()
+
+    def notify(self, event):
+        for subscriber in self.subscribers:
+            subscriber.receive(event)
