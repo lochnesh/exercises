@@ -2,13 +2,17 @@ defmodule ElixirAreaOfRoom.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :elixir_area_of_room,
-     version: "0.1.0",
-     elixir: "~> 1.5",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     escript: [main_module: ElixirAreaOfRoom],
-     deps: deps()]
+    [
+      app: :elixir_area_of_room,
+      version: "0.1.0",
+      elixir: "~> 1.5",
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      escript: [main_module: ElixirAreaOfRoom],
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [coveralls: :test]
+    ]
   end
 
   def application do
@@ -16,6 +20,9 @@ defmodule ElixirAreaOfRoom.Mixfile do
   end
 
   defp deps do
-    [{:credo, "~> 0.4", only: [:dev, :test]}]
+    [
+      {:credo, "~> 0.4", only: [:dev, :test]},
+      {:excoveralls, "~> 0.8", only: :test}
+    ]
   end
 end
