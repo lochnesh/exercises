@@ -1,16 +1,17 @@
 class Register:
 
-    def __init__(self, subscribers):
+    def __init__(self, subscribers, read):
         self.items = []
         self.__tax_rate = .055
         self.subscribers = subscribers
+        self.read = read
 
-    def get_next_item(self, read):
-        name = read('Enter the name of the item: ')
-        price = float(read('Enter the price of the item: '))
-        quantity = int(read('Enter the quantity of the item: '))
+    def get_next_item(self):
+        name = self.read('Enter the name of the item: ')
+        price = float(self.read('Enter the price of the item: '))
+        quantity = int(self.read('Enter the quantity of the item: '))
         self.add_item(name, price, quantity)
-        
+
     def add_item(self, item, price, quantity):
         self.items.append((item, price, quantity))
 

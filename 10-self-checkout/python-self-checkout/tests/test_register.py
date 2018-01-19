@@ -9,11 +9,12 @@ class TestRegister(unittest.TestCase):
         self.sub1 = MySubscriber()
         self.sub2 = MySubscriber()
         self.register = Register(subscribers=[self.sub1,
-                                              self.sub2])
+                                              self.sub2],
+                                 read=self.mock_read)
         self.prompts = None
 
     def mock_read(self, prompt):
-        return self.prompts[prompt] 
+        return self.prompts[prompt]
 
     def add_items(self):
         self.register.add_item("orange", .50, 3)
@@ -53,7 +54,7 @@ class TestRegister(unittest.TestCase):
             'Enter the price of the item: ': '.25',
             'Enter the quantity of the item: ': '1'
         }
-        self.register.get_next_item(self.mock_read)
+        self.register.get_next_item()
         self.assertEqual(('Gumball', .25, 1), self.register.items[0])
 
 
