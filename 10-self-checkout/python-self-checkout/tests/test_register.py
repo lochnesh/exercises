@@ -10,6 +10,10 @@ class TestRegister(unittest.TestCase):
         self.sub2 = MySubscriber()
         self.register = Register(subscribers=[self.sub1,
                                               self.sub2])
+        self.prompts = None
+
+    def mock_read(self, prompt):
+        return self.prompts[prompt] 
 
     def add_items(self):
         self.register.add_item("orange", .50, 3)
@@ -42,6 +46,15 @@ class TestRegister(unittest.TestCase):
             self.register.notify(e)
         self.assertEqual(self.sub1.events, events)
         self.assertEqual(self.sub2.events, events)
+
+    def test_register_gets_next_item(self):
+        self.prompts = {
+            'Enter the name of the item: ': 'Gumball',
+            'Enter the price of the item: ': '.25',
+            'Enter the quantity of the item: ': '1'
+        }
+        self.register.get_next_item(self.mock_read)
+        self.assertEqual(('Gumball', .25, 1), self.register.items[0])
 
 
 class MySubscriber():
