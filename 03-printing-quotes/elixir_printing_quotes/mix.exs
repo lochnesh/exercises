@@ -12,7 +12,7 @@ defmodule ElixirPrintingQuotes.Mixfile do
       escript: [main_module: ElixirPrintingQuotes],
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [coveralls: :test]
+      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test]
     ]
   end
 

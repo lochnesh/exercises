@@ -11,7 +11,7 @@ defmodule ElixirRetirementCalculator.Mixfile do
       escript: [main_module: ElixirRetirementCalculator],
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: [coveralls: :test]
+      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test]
     ]
   end
 
