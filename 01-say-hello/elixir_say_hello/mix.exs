@@ -5,7 +5,7 @@ defmodule ElixirSayHello.Mixfile do
     [
       app: :elixir_say_hello,
       version: "0.0.1",
-      elixir: "~> 1.5",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       escript: [main_module: ElixirSayHello],
