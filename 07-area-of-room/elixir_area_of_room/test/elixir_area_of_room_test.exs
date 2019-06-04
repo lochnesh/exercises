@@ -9,7 +9,7 @@ defmodule ElixirAreaOfRoomTest do
     read = fn(prompt) ->
       case prompt do
         "What is the length of the room in feet? " -> "#{length}\n"
-        "What is the width of the room in feet? " -> "#{width}\n" 
+        "What is the width of the room in feet? " -> "#{width}\n"
       end
     end
 
