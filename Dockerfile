@@ -1,10 +1,7 @@
-FROM lochnesh/exercises-docker
+FROM lochnesh/exercises-docker:latest
 
 MAINTAINER Skyler Nesheim
 
-RUN mkdir -p /usr/src/exercises
-WORKDIR /usr/src/exercises
-
 COPY ./ /usr/src/exercises
-
+WORKDIR /usr/src/exercises
 RUN ./verify.sh
