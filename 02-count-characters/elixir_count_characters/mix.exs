@@ -11,7 +11,7 @@ defmodule ElixirCountCharacters.Mixfile do
       escript: [main_module: ElixirCountCharacters],
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test]
+      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test]
     ]
   end
 

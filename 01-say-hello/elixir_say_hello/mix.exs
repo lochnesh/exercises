@@ -11,7 +11,7 @@ defmodule ElixirSayHello.Mixfile do
       escript: [main_module: ElixirSayHello],
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
-      preferred_cli_env: ["coveralls": :test, "coveralls.detail": :test]
+      preferred_cli_env: [coveralls: :test, "coveralls.detail": :test]
     ]
   end
 
