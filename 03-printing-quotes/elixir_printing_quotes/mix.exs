@@ -6,9 +6,9 @@ defmodule ElixirPrintingQuotes.Mixfile do
       app: :elixir_printing_quotes,
       version: "0.0.1",
       elixir: "~> 1.6",
-      elixirc_paths: elixirc_paths(Mix.env),
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      elixirc_paths: elixirc_paths(Mix.env()),
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       escript: [main_module: ElixirPrintingQuotes],
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
@@ -29,6 +29,5 @@ defmodule ElixirPrintingQuotes.Mixfile do
   end
 
   defp elixirc_paths(:test), do: ["test/support", "lib"]
-  defp elixirc_paths(_),     do: ["lib"]
-
+  defp elixirc_paths(_), do: ["lib"]
 end
