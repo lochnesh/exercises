@@ -1,10 +1,9 @@
 defmodule ElixirCountCharacters do
-
   @moduledoc """
   Program that counts characters in an input string
   """
 
-  @spec main(list(String.t)) :: :ok
+  @spec main(list(String.t())) :: :ok
   def main(_args) do
     get_input()
     |> create_output()
@@ -12,9 +11,11 @@ defmodule ElixirCountCharacters do
   end
 
   defp get_input do
-    input = "What is the input string? "
-    |> IO.gets()
-    |> String.trim()
+    input =
+      "What is the input string? "
+      |> IO.gets()
+      |> String.trim()
+
     case input do
       "" -> get_input()
       not_empty -> not_empty
@@ -24,5 +25,4 @@ defmodule ElixirCountCharacters do
   defp create_output(input) do
     "#{input} has #{String.length(input)} characters."
   end
-
 end
