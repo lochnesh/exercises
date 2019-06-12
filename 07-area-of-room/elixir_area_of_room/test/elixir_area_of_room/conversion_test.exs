@@ -6,5 +6,4 @@ defmodule ElixirAreaOfRoom.ConversionTest do
   test "converts feet to meters" do
     assert Conversion.feet_to_meters(300) == 27.871
   end
-
 end

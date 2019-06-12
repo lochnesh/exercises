@@ -6,5 +6,4 @@ defmodule ElixirAreaOfRoom.AreaTest do
   test "calculates area of room in feet" do
     assert Area.in_feet(15, 20) == 300
   end
-
 end
