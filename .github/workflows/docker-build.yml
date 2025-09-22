@@ -1,0 +1,17 @@
+name: Verify Docker Build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t lochnesh/exercises .
