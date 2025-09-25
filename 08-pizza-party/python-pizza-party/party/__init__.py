@@ -1,1 +1,1 @@
-from party import PizzaParty # noqa F401
+from .party import PizzaParty  # noqa: F401

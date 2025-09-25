@@ -13,6 +13,11 @@ verify_python()
   python -m unittest discover -s tests
 }
 
+verify_python3()
+{
+  python3 -m unittest discover -s tests
+}
+
 verify_scala()
 {
   sbt scalastyle test:scalastyle assembly
@@ -40,7 +45,7 @@ pushd 06-retirement-calculator/elixir_retirement_calculator && verify_elixir && 
 pushd 07-area-of-room/elixir_area_of_room && verify_elixir && popd
 
 #08
-pushd 08-pizza-party/python-pizza-party && verify_python && popd
+pushd 08-pizza-party/python-pizza-party && verify_python3 && popd
 
 #09
 pushd 09-paint-calculator/scala-paint-calculator && verify_scala && popd
