@@ -2,7 +2,7 @@ name := "paint-calculator"
 
 version := "1.1.0"
 
-scalaVersion := "2.13.14"
+scalaVersion := "2.13.15"
 
 libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-effect" % "3.6.3",
