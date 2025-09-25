@@ -1,7 +1,9 @@
 package com.lochnesh.paint.calculator
 
-import org.scalatest.{AsyncFlatSpec, Matchers}
+import org.scalatest.flatspec.AsyncFlatSpec
+import org.scalatest.matchers.should.Matchers
 
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.Promise
 
 class MainSpec extends AsyncFlatSpec with Matchers {
@@ -11,7 +13,7 @@ class MainSpec extends AsyncFlatSpec with Matchers {
 
     PaintCalculator.run(inputs("12", "10"), func)
 
-    result.future map { _ should be ("You will need 1 gallon of paint to cover 120.0 square feet.") }
+    result.future.map { _ shouldBe "You will need 1 gallon of paint to cover 120.0 square feet." }
   }
 
   it should "pluralize response" in {
@@ -19,21 +21,21 @@ class MainSpec extends AsyncFlatSpec with Matchers {
 
     PaintCalculator.run(inputs("20", "30"), func)
 
-    result.future map { _ should be ("You will need 2 gallons of paint to cover 600.0 square feet.") }
+    result.future.map { _ shouldBe "You will need 2 gallons of paint to cover 600.0 square feet." }
   }
 
   private def inputs(length: String, width: String) = {
-    (p: String) ⇒ {
+    (p: String) => {
       p match {
-        case "What is the length of the ceiling? " ⇒ length
-        case "What is the width of the ceiling? " ⇒ width
+        case "What is the length of the ceiling? " => length
+        case "What is the width of the ceiling? " => width
       }
     }
   }
 
   private def output() = {
     val data = Promise[String]()
-    val output: (String) ⇒ Unit = (t: String) ⇒ {
+    val output: String => Unit = (t: String) => {
       data.success(t)
     }
     (data, output)
