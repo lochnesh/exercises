@@ -1,6 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
-from __future__ import print_function
 from party import PizzaParty
 
 
@@ -18,4 +17,4 @@ def run(read, prt):
     prt('There are %s leftover pieces.' % (party.leftovers()))
 
 if __name__ == "__main__":
-    run(raw_input, print)
+    run(input, print)

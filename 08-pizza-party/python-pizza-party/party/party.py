@@ -20,7 +20,7 @@ class PizzaParty():
         return self
 
     def pieces_per_person(self):
-        return self.slices / self.people
+        return self.slices // self.people
 
     def leftovers(self):
         return self.slices % self.people

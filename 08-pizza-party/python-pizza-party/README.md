@@ -3,11 +3,11 @@
 ##to run
 
 ```
-./main.py
+python3 main.py
 ```
 
 ##tests
 
 ```
-python -m unittest discover -s tests
+python3 -m unittest discover -s tests
 ```
